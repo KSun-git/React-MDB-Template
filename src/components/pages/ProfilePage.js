@@ -1,126 +1,116 @@
 import React from 'react'
-import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from 'mdbreact';
-import src1 from '../../assets/img-1.jpg';
+import { MDBCard, MDBCol, MDBRow, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn} from 'mdbreact';
+import jsonData from '../../jsonSamples/cardList';
+import './ProfilePage.css';
 
-const ProfilePage =  () => {
-  return (
-    <React.Fragment>
-        <MDBRow className="justify-content-center">
-        <MDBCol sm="12" md="6" lg="3" className="mb-5">
-            <MDBCard>
-                <MDBCardImage className="img-fluid" src={src1} />
-                <MDBCardBody>
-                    <MDBCardTitle className="text-center mb-2 font-bold">Alice Mayer</MDBCardTitle>
-                    <MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">Photographer</MDBCardTitle>
-                    <MDBCardText>
-                        <strong className="mb-2">About:</strong>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis quod animi dignissimos consectetur quibusdam numquam laboriosam, minus, provident...
-                    </MDBCardText>
-                    <div className="row justify-content-end pr-1">
-                        <MDBBtn size="sm" outline color="primary">More...</MDBBtn>
-                    </div>
-                </MDBCardBody>
-            </MDBCard>
-        </MDBCol>
-        <MDBCol md="6" lg="9">
-        <section className="text-center pb-3">
-          <MDBRow className="d-flex justify-content-center">
-            <MDBCol lg="6" xl="5" className="mb-3">
-              <MDBCard className="d-flex mb-5">
-                <MDBView>
-                  <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-profile-page.jpg" alt="Project" className="img-fluid"/>
-                  <MDBMask overlay="white-slight"/>
-                </MDBView>
-                <MDBCardBody>
-                  <MDBCardTitle className="font-bold mb-3">
-                    <strong>Project name</strong>
-                  </MDBCardTitle>
-                  <MDBCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</MDBCardText>
-                </MDBCardBody>
-                <MDBCardFooter className="links-light profile-card-footer">
-                  <span className="right">
-                    <a className="p-2" href="#profile">
-                      Live Preview
-                      <MDBIcon icon="image" className="ml-1"/>
-                    </a>
-                  </span>
-                </MDBCardFooter>
-              </MDBCard>
-            </MDBCol>
-            <MDBCol lg="6" xl="5" className="mb-3">
-              <MDBCard className="d-flex mb-5">
-                <MDBView>
-                  <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-signup.jpg" alt="Project" className="img-fluid"/>
-                  <MDBMask overlay="white-slight"/>
-                </MDBView>
-                <MDBCardBody>
-                  <MDBCardTitle className="font-bold mb-3">
-                    <strong>Project name</strong>
-                  </MDBCardTitle>
-                  <MDBCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</MDBCardText>
-                </MDBCardBody>
-                <MDBCardFooter className="links-light profile-card-footer">
-                  <span className="right">
-                    <a className="p-2" href="#profile">
-                      Live Preview
-                      <MDBIcon icon="image" className="ml-1"/>
-                    </a>
-                  </span>
-                </MDBCardFooter>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="d-flex justify-content-center">
-            <MDBCol lg="6" xl="5" className="mb-3">
-              <MDBCard className="d-flex mb-5">
-                <MDBView>
-                  <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-profile-page.jpg" alt="Project" className="img-fluid"/>
-                  <MDBMask overlay="white-slight"/>
-                </MDBView>
-                <MDBCardBody>
-                  <MDBCardTitle className="font-bold mb-3">
-                    <strong>Project name</strong>
-                  </MDBCardTitle>
-                  <MDBCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</MDBCardText>
-                </MDBCardBody>
-                <MDBCardFooter className="links-light profile-card-footer">
-                  <span className="right">
-                    <a className="p-2" href="#profile">
-                      Live Preview
-                      <MDBIcon icon="image" className="ml-1"/>
-                    </a>
-                  </span>
-                </MDBCardFooter>
-              </MDBCard>
-            </MDBCol>
-            <MDBCol lg="6" xl="5" className="mb-3">
-              <MDBCard className="d-flex mb-5">
-                <view-wrapper>
-                  <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-signup.jpg" alt="Project" className="img-fluid"/>
-                  <MDBMask overlay="white-slight"/>
-                </view-wrapper>
-                <MDBCardBody>
-                  <MDBCardTitle className="font-bold mb-3">
-                    <strong>Project name</strong>
-                  </MDBCardTitle>
-                  <MDBCardText>Some quick example text to build on the card title and make up the bulk of the card's content.</MDBCardText>
-                </MDBCardBody>
-                <MDBCardFooter className="links-light profile-card-footer">
-                  <span className="right">
-                    <a className="p-2" href="#profile">
-                      Live Preview
-                      <MDBIcon icon="image" className="ml-1"/>
-                    </a>
-                  </span>
-                </MDBCardFooter>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-        </section>
-      </MDBCol>
-    </MDBRow>
-    </React.Fragment>
-  );
+class ProfilePage extends React.Component {
+	state = {
+		cards: [],
+		isLoading: false,
+		isContentOpen: false,
+		openedCard: "none"
+	};
+
+	constructor(props){
+		console.log('[Component]Profile => constructor!')
+		super(props);
+		this.state = {
+			cards: [],
+			isLoading: false,
+			isContentOpen: false,
+			openedCard: "none"
+		}
+	};
+	
+	openCard = (cardId) => {
+		this.setState({
+			isContentOpen: true,
+			openedCard: cardId
+		});
+	};
+
+	closeCard = (cardId) => {
+		this.setState({
+			isContentOpen: false,
+			openedCard: "none"
+		});
+	};
+	
+	callData = () => {
+		//데이터를 불러오는 곳 => 서버에서 불러오는 작업을하려면 Axios|Fetch|XMLHttpRequest 를 사용해야함
+		const getData = jsonData;  //json파일에서 데이터 가져옴
+		console.log("callData");
+		console.log(getData);
+		this.setState({cards: getData});
+	}
+	
+	componentDidMount(){
+		//체크용:최초마운트
+		console.log("[Component]Profile => componentDidMount!");
+		console.log(this.state.isContentOpen);
+		console.log(this.state.openedCard);
+		this.callData();
+	};
+
+	componentDidUpdate(){
+		//컴포넌트 업데이트완료 => open이면 스크롤이동
+		console.log("[Component]Profile => componentDidUpdate!");
+		console.log(this.state.isContentOpen);
+		console.log(this.state.openedCard);
+		
+		if(this.state.isContentOpen){
+			const moveTop = document.getElementById(this.state.openedCard).offsetTop - 30 ;
+			//window.scrollTo(0, moveTop);
+			window.scrollTo({ top:moveTop, behavior:'smooth'});
+		}
+		
+	};
+
+
+	
+	render(){
+		console.log('[Component]Profile => render');
+		const {isLoading, isContentOpen, openedCard, cards} = this.state;
+	return (
+		<React.Fragment>
+			<MDBRow className="justify-content-center">
+				{isLoading ? (
+					<MDBCol className="loader">
+						<span className="loader_text">"Now Loading..."</span>
+					</MDBCol>
+				) : (
+					cards.map(card => {
+					 	return(
+							<MDBCol key={card.card_idx} id={card.card_idx} sm="12" 
+								md={((openedCard===card.card_idx && isContentOpen) ? '12' : '6')} 
+								lg={((openedCard===card.card_idx && isContentOpen) ? '12' : '3')} className="mb-5">
+								<MDBCard className="profile_card">
+									<MDBCardBody>
+										<MDBCardTitle className="text-center mb-2 font-bold">{card.card_title}</MDBCardTitle>
+										<MDBCardTitle sub className="text-center indigo-text mb-2 font-bold">{card.card_subTitle}</MDBCardTitle>
+										<MDBCardText className={(openedCard===card.card_idx && isContentOpen) ? 'full_contents' : 'sliced_contents'} >
+											<strong className="mb-2">Contents: </strong>
+											{(openedCard===card.card_idx && isContentOpen) ? 
+												card.card_contents : 
+												`${card.card_contents.slice(0, 150)}...`
+											}
+												
+										</MDBCardText>
+										<div className="row justify-content-end pr-1">
+											{((openedCard===card.card_idx && isContentOpen) ? 
+											  <MDBBtn size="sm" color="primary" onClick={this.closeCard.bind(this,card.card_idx)} className="CardCloseBtn">Close</MDBBtn> : 
+											  <MDBBtn size="sm" outline color="primary" onClick={this.openCard.bind(this,card.card_idx)} >More...</MDBBtn>)}
+										</div>
+									</MDBCardBody>
+								</MDBCard>
+							</MDBCol>
+						)
+					})
+				)}
+			</MDBRow>
+		</React.Fragment>
+	);
+	}
 }
 
 export default ProfilePage;

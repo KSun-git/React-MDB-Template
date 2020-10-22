@@ -1,0 +1,31 @@
+#form_login{
+	width: 100%;
+}
+
+#option_login{
+	width: 100%;
+	border-top: 1px solid #ced4da;
+	text-align: center;
+	margin-top: 5px;
+	padding-top: 10px;
+	margin-bottom:10px;
+}
+
+#option_center{
+	margin: 0px 10px;
+	padding: 0px 10px;
+	border-left: 1px solid #ced4da;
+	border-right: 1px solid #ced4da;
+}
+
+#logo_login{
+	width:150px;
+}
+
+#input_id, #input_password{
+	margin:0;
+}
+
+.input_with_icon{
+	margin-bottom:30px;
+}

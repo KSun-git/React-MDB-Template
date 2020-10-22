@@ -1,0 +1,80 @@
+.Con1.div_content{
+	/*border:1px dotted blue;*/
+	min-height:100vh;
+	padding-left:10px;
+}
+
+.Con1 .titleCardBody{
+	padding:0;
+	min-height:43px;
+}
+
+.Con1 #content_title{
+	padding-left:10px;
+	line-height:43px;
+	font-weight:bold;
+	font-size:20px;
+}
+
+.Con1 #title_option{
+	float:right;
+}
+
+.btn_con1{
+	padding:5px 15px 5px 15px;
+	border-radius:0.5rem;
+}
+
+
+#con1_searchFrm{
+	border-radius: 0.25rem;
+	border: 2px solid #bdbdbd;
+	padding: 5px 0 5px 0;
+}
+
+
+.searchFrm_div{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#con1_btn_clear{
+	float:right;
+	border-radius: 0.25rem;
+	padding: 5px 10px 5px 10px;
+	margin: 0 5px 0 0;
+	height: 38px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.con1_loader{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.con1_btn_modal{
+	border-radius: 0.25rem;
+}
+
+#frm_con1Modal{
+	border-radius: 0.25rem;
+	border: 2px solid #bdbdbd;
+	padding: 5px 0 5px 5px;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+#btn_downCon1Template{
+	font-size: 13px;
+	padding: 4px 12px 4px 12px;
+	border-radius: 1rem;
+}
+
+#con1Modal_precautions{
+	color:blue;
+	font-size:13px;
+	padding:10px 10px 30px 15px;
+}

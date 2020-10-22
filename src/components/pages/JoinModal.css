@@ -1,0 +1,35 @@
+#modal_title{
+	border-bottom: 1px solid #ced4da;
+}
+
+#join_title{
+	padding-bottom: 0.5rem;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.pills_title{
+	width: 50%;
+	text-align: center;	
+}
+
+.pills_title > a {
+	border-radius:0 !important;
+	border: 1px solid #0d47a1;
+}
+
+.pills_title > .active {
+	color: white !important;
+	background-color: #0d47a1 !important;
+}
+
+#submit_frm_company{
+	width: 100%;	
+	margin:0 0 10px 0;
+}
+
+#submit_frm_member{
+	width: 100%;	
+	margin:0 0 10px 0;
+}

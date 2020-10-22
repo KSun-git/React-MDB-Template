@@ -1,0 +1,21 @@
+.Con6_Batch.div_content{
+	/*border:1px dotted blue;*/
+	min-height:100vh;
+	padding-left:10px;
+}
+
+.Con6_Batch .titleCardBody{
+	padding:0;
+	min-height:43px;
+}
+
+.Con6_Batch #content_title{
+	padding-left:10px;
+	line-height:43px;
+	font-weight:bold;
+	font-size:20px;
+}
+
+.Con6_Batch .contentsCardBody{
+	height:100vh;
+}
