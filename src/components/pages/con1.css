@@ -20,6 +20,11 @@
 	float:right;
 }
 
+.Con1 .searchFrm_div{
+	display: inline-block;
+	margin-left: 10px;
+}
+
 .btn_con1{
 	padding:5px 15px 5px 15px;
 	border-radius:0.5rem;
@@ -30,12 +35,6 @@
 	border-radius: 0.25rem;
 	border: 2px solid #bdbdbd;
 	padding: 5px 0 5px 0;
-}
-
-
-.searchFrm_div{
-	display: inline-block;
-	margin-left: 10px;
 }
 
 #con1_btn_clear{

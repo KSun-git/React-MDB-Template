@@ -66,8 +66,8 @@ class con1 extends Component {
 			<MDBCard className="mt-2">
 				<MDBCardBody className="con1CardBody">
 					<form id="con1_searchFrm">
-						<div className="searchFrm_div"><span>계약시작일</span><span>Datepicker1</span></div> ~
-						<div className="searchFrm_div">Datepicker2</div>
+						<div className="searchFrm_div border"><span>계약시작일</span><span>Datepicker1</span></div> ~
+						<div className="searchFrm_div border">Datepicker2</div>
 						
 						<div className="searchFrm_div">
 							<select className="browser-default custom-select" id="input_select1">
@@ -97,7 +97,7 @@ class con1 extends Component {
 						</div>
 						
 						<div className="searchFrm_div">
-							<input type="text" className="form-control" placeholder="영문+숫자 5자리 이상" id="input_keyword"/>
+							<input type="text" className="form-control" placeholder="회원사명/계약번호 입력" id="input_keyword"/>
 						</div>
 						<MDBIcon icon="search" className="ml-2"/>
 						

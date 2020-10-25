@@ -19,3 +19,15 @@
 .Con6_Member .contentsCardBody{
 	height:100vh;
 }
+
+#con6Member_searchFrm{
+	border-radius: 0.25rem;
+	border: 2px solid #bdbdbd;
+	padding: 5px 0 5px 0;
+}
+
+.Con6_Member .searchFrm_div{
+	display: inline-block;
+	margin-left: 10px;
+}
+
