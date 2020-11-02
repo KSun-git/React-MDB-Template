@@ -40,6 +40,7 @@ import Company_Calculate from './pages/Company_Calculate';
 import Admin_Calculate from './pages/Admin_Calculate';
 
 import Member_Faq from './pages/Member_Faq';
+import Company_Faq from './pages/Company_Faq';
 
 class Routes extends React.Component {
   render() {
@@ -112,6 +113,7 @@ class Routes extends React.Component {
 				<Route path='/Member/Faq' component={Member_Faq} />
 
 				{/* 2.거래소 */}
+				<Route path='/Company/Faq' component={Company_Faq} />
 				
 				{/* 3.관리자 */}
 		</Switch>

@@ -72,7 +72,7 @@ class ProfilePage extends React.Component {
 		console.log('[Component]Profile => render');
 		const {isLoading, isContentOpen, openedCard, cards} = this.state;
 	return (
-		<React.Fragment>
+		<div className="profilePage">
 			<MDBRow className="justify-content-center">
 				{isLoading ? (
 					<MDBCol className="loader">
@@ -108,7 +108,7 @@ class ProfilePage extends React.Component {
 					})
 				)}
 			</MDBRow>
-		</React.Fragment>
+		</div>
 	);
 	}
 }

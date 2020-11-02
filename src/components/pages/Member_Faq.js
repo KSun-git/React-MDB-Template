@@ -21,30 +21,37 @@ class Member_Faq extends Component {
     callFaqList = () => {
 		//데이터를 불러오는 곳 => 서버에서 불러오는 작업을하려면 Axios|Fetch|XMLHttpRequest 를 사용해야함
 		const getData = jsonData;  //json파일에서 데이터 가져옴
-		this.setState({cards: getData});
+        this.setState({cards: getData});
+        
 	}
 
     componentDidMount(){
-		this.callFaqList();
+        this.callFaqList();
     }
     
     componentDidUpdate(){
-		
+        if(this.state.isContentOpen){
+			const moveTop = document.getElementById(this.state.openedCard).offsetTop + 50;
+			//window.scrollTo(0, moveTop);
+			window.scrollTo({ top:moveTop, behavior:'smooth'});
+		}
     }
     
-    openCard = (cardId) => {
-		this.setState({
-			isContentOpen: true,
-			openedCard: cardId
-		});
-	};
-
-	closeCard = (cardId) => {
-		this.setState({
-			isContentOpen: false,
-			openedCard: "none"
-		});
-    };
+    toggleCard = (cardId) => {
+        const{isContentOpen, openedCard} = this.state;
+        if(isContentOpen){
+            if(openedCard===cardId){
+                //FAQ카드 접기
+                this.setState({isContentOpen: false, openedCard: "none"})
+            }else{
+                //FAQ카드확장 교체
+                this.setState({openedCard: cardId})
+            }
+        }else{
+            //FAQ카드 펼치기
+            this.setState({isContentOpen: true, openedCard: cardId})
+        }
+    }
     
 	render() {
         const {isLoading, isContentOpen, openedCard, cards} = this.state;
@@ -97,31 +104,29 @@ class Member_Faq extends Component {
                                 ) : (
                                     <>
                                     <MDBRow className="justify-content-start mt-2">
-                                        {cards.map(card => {
+                                        {cards.map((card,row) => {
                                             return(
-                                                <MDBCol key={card.card_idx} id={card.card_idx} sm="12" 
-                                                    md={((openedCard===card.card_idx && isContentOpen) ? '12' : '6')} 
-                                                    lg={((openedCard===card.card_idx && isContentOpen) ? '12' : '4')} className="mb-5">
+                                                <MDBCol key={card.card_idx} id={card.card_idx} sm="12" md='6' lg='4' className="mb-4">
                                                     <MDBCard className="faq_card">
                                                         <MDBCardBody>
-                                                            <MDBCardTitle className="mb-2 font-bold">Q. {card.card_title}</MDBCardTitle>
+                                                            <MDBCardTitle className="mb-2 font-bold">
+                                                                <span onClick={this.toggleCard.bind(this,card.card_idx)} style={{cursor:"pointer"}}>Q. {card.card_title}</span>
+                                                            </MDBCardTitle>
                                                             <MDBCardTitle sub className="indigo-text mb-2">{card.card_subTitle}</MDBCardTitle>
                                                             <MDBCardText className={(openedCard===card.card_idx && isContentOpen) ? 'full_contents' : 'sliced_contents'} >
-                                                                <strong className="mb-2">A. </strong>
-                                                                {card.card_contents}
+                                                                {(openedCard===card.card_idx && isContentOpen) ? 
+                                                                    card.card_contents.split('\n').map((line,index) => {
+                                                                        return (<span key={index}>{line}<br /></span>)
+                                                                    }) 
+                                                                : 
+                                                                    <>
+                                                                        {card.card_contents.split('\n').slice(0,5).map( (line,index) => {
+                                                                            return (<span key={index}>{line}<br /></span>)
+                                                                        })}
+                                                                        <span> ....</span>
+                                                                    </>
+                                                                }
                                                             </MDBCardText>
-                                                            {/** 하위버튼
-                                                            <div className="row justify-content-end pr-1">
-                                                                {((openedCard===card.card_idx && isContentOpen) ? 
-                                                                <MDBBtn size="sm" color="primary" onClick={this.closeCard.bind(this,card.card_idx)} className="CardCloseBtn">Close</MDBBtn> : 
-                                                                <MDBBtn size="sm" outline color="primary" onClick={this.openCard.bind(this,card.card_idx)} >More...</MDBBtn>)}
-                                                            </div>
-                                                            */}
-                                                            {/** 기타 컨텐츠
-                                                             <MDBCardText>
-                                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                                             </MDBCardText>
-                                                            */}
                                                         </MDBCardBody>
                                                     </MDBCard>
                                                 </MDBCol>
