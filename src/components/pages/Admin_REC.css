@@ -1,0 +1,48 @@
+/*컨텐츠영역 구성*/
+.Admin_REC.div_content{min-height:100vh;padding-left:10px;}
+.Admin_REC .titleCardBody{padding:0;min-height:43px;}
+.Admin_REC #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+.Admin_REC #title_option{float:right;}
+.Admin_REC .btn_REC_enroll{padding:5px 15px 5px 15px;border-radius:0.5rem;}
+
+/*일괄등록 모달*/
+.Admin_REC .btn_download_file{font-size: 13px;padding: 4px 12px 4px 12px;border-radius: 1rem;}
+.Admin_REC .frm_upload_file{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 5px;margin-left: 8px;margin-right: 8px;}
+.Admin_REC .enrollModal_precautions{color:blue;font-size:13px;padding:10px 10px 30px 15px;}
+.Admin_REC .btn_modal_commend{border-radius: 0.25rem;}
+
+/*검색라인*/
+.Admin_REC .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Admin_REC .searchFrm .form-control,.Admin_REC .searchFrm .custom-select{border: 1px solid black}
+.Admin_REC .searchFrm_btn{margin-left: auto;}
+.Admin_REC .btn_searchFrm_clear,.Admin_REC .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+.Admin_REC .searchFrm .form-control.dateLabel{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right: 0;width: 90px;background-color: #ffffff;}
+.Admin_REC .searchFrm .form-control.intputDate{border-top-left-radius: 0;border-bottom-left-radius: 0;width:165px;}
+
+/*테이블*/
+.Admin_REC .REC_table th{font-weight: bold;}
+.Admin_REC .REC_table_check{width:18px;height:18px;}
+
+/*계약정보 모달*/
+.Admin_REC .REC_contract_Table th{font-weight: 600;}
+.Admin_REC .contractLoad{color:darkgray;background-color: #DCDCDC;height:700px;font-size: 26px;}
+
+/*회원사 정보 상세 모달*/
+.Admin_REC .REC_member_Table1 th, .Admin_REC .REC_member_Table1 td{
+    padding-top:5px !important;
+    padding-bottom: 5px !important;
+}
+.Admin_REC .REC_member_Table1 th{
+    background-color:#9e9e9e;
+    font-weight: bold;
+}
+
+.Admin_REC .REC_member_Table2 th, .Admin_REC .REC_member_Table2 td{
+    padding-top:5px !important;
+    padding-bottom: 5px !important;
+}
+
+.Admin_REC .REC_member_Table2 th{
+    font-weight: bold;
+}
+

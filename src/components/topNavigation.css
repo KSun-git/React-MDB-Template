@@ -5,3 +5,13 @@
 .navUserBtn{
 	padding:8px;
 }
+
+.kpx_topNav .roleControl.on{
+	color:red;
+	font-size: large;
+	font-weight: 600;
+}
+
+.kpx_sidebar .offMenu{
+	color:gray !important;
+}

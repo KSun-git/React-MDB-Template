@@ -94,7 +94,7 @@ class ProfilePage extends React.Component {
 												card.card_contents : 
 												`${card.card_contents.slice(0, 150)}...`
 											}
-												
+											
 										</MDBCardText>
 										<div className="row justify-content-end pr-1">
 											{((openedCard===card.card_idx && isContentOpen) ? 

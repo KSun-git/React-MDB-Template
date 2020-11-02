@@ -3,19 +3,20 @@ import { MDBCard,MDBCardBody,MDBBtn,MDBNav,MDBNavItem,MDBNavLink,MDBTabContent,M
 import { MDBTable, MDBTableHead, MDBTableBody } from "mdbreact";
 import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow} from "mdbreact";
 import { MDBModal, MDBModalHeader, MDBModalBody} from "mdbreact";
-import { Link } from "mdbreact";
-import './con4.css';
 import MultiYearSelector from './sections/MultiSelect_Year';
+import './Admin_Calculate.css';
 
-class con4 extends Component {
+class Admin_Calculate extends Component {
 	state = {
 		items: {
 			default: "1",
 		},
 		REC_info_Modal: false,
 		REC_contract_Modal: false,
+		repleOn: false,
+		fromNav: "",
 	}
-
+	
 	REC_info_Modal_toggle = () => {
 		this.setState({
 			REC_info_Modal: !this.state.REC_info_Modal
@@ -27,35 +28,36 @@ class con4 extends Component {
 			REC_contract_Modal: !this.state.REC_contract_Modal
 		});
 	}
-/*
+
+	RECInfo_reple_toggle = () => {
+		this.setState({
+			repleOn: !this.state.repleOn
+		});
+    }
+
 	constructor(props){
 		super(props);
-		console.log('constructor');
-		const{id} = this.props.match.params;
-		console.log(id);
+		//console.log('constructor');
 	}
-*/
 
-/*	componentDidMount(){
-		console.log('didMount');
+	componentDidMount(){
 		const{id} = this.props.match.params;
-		console.log(id);
-		this.setState({items:{default: id}});
+		this.setState({
+			items:{default: id},
+			fromNav: id
+		});
 	}
-*/
-/*
+
 	componentDidUpdate(){
-		console.log('didUpdate');
-		const{id} = this.props.match.params;
-		const{now} = this.state.items.default;
-		console.log(id);
-		console.log(this.state.items.default);
-
-		//id === now ? null : this.setState({items:{default: id}});
-		
-		//
+		if(this.state.fromNav===this.props.match.params.id){
+			//console.log('컨텐츠 내에서에서 탭버튼클릭으로 이동');
+		}else{
+			//console.log('사이드메뉴에서 탭메뉴이동');
+			this.setState({fromNav: this.props.match.params.id});
+			this.setState({items:{default: this.props.match.params.id}});
+		}
 	}
-*/
+
 	togglePills = (type, tab) => e => {
 		e.preventDefault();
 		if (this.state.items[type] !== tab) {
@@ -68,12 +70,10 @@ class con4 extends Component {
 	};
 	
 	render() {
-		//console.log(this.props);
-		
-		//console.log(this.state.items);
+		const {repleOn} = this.state;
 
 		return (
-			<div className="Con4 div_content" style={{marginTop:"70px"}}>
+			<div className="Admin_Calculate div_content">
 				<MDBCard>
 					<MDBCardBody className="titleCardBody">
 						<span id="content_title">정산관리 </span><span style={{color:"red"}}>(권한&gt;관리자)</span>
@@ -81,23 +81,23 @@ class con4 extends Component {
 				</MDBCard>
 				
 				<MDBCard className="mt-2 pb-3">
-					<MDBCardBody className="con4CardBody">
+					<MDBCardBody className="contentCardBody">
 						<MDBNav className="nav-pills">
-							<MDBNavItem className="con4_pills_title" >
+							<MDBNavItem className="Calculate_pills_title" >
 								<MDBNavLink link to="#" 
 									active={this.state.items["default"] === "1"} 
 									onClick={this.togglePills("default", "1")} >
 									중간정산승인처리
 								</MDBNavLink>
 							</MDBNavItem>
-							<MDBNavItem className="con4_pills_title" >
+							<MDBNavItem className="Calculate_pills_title" >
 								<MDBNavLink link to="#" 
 									active={this.state.items["default"] === "2"} 
 									onClick={this.togglePills("default", "2")} >
 									연간정산내역조회
 								</MDBNavLink>
 							</MDBNavItem>
-							<MDBNavItem className="con4_pills_title" >
+							<MDBNavItem className="Calculate_pills_title" >
 								<MDBNavLink link to="#" 
 									active={this.state.items["default"] === "3"} 
 									onClick={this.togglePills("default", "3")} >
@@ -107,17 +107,17 @@ class con4 extends Component {
 						</MDBNav>
 						
 						<MDBTabContent activeItem={this.state.items["default"]}>
-								<MDBTabPane tabId="1" className="con4_tab1 Company_REC"> {/* Company_REC css분리필요함 */}
+								<MDBTabPane tabId="1" >
 									{/* 중간정산 탭 */}
 									<form className="searchFrm form-inline">
 										<div className="form-group ml-2" >
-											<select className="browser-default custom-select" defaultValue="1">
+											<select className="browser-default custom-select dateLabel" defaultValue="1">
 												<option value="1">요청일자</option>
 												<option value="2">처리일자</option>
 											</select>
 										</div>
 										<div className="form-group">
-											<input type="date" className="form-control" style={{width:"165px"}} />
+											<input type="date" className="form-control intputDate" style={{width:"165px"}} />
 										</div>
 
 										<div className="form-group ml-2">
@@ -130,7 +130,7 @@ class con4 extends Component {
 											</select>
 										</div>
 										<div className="form-group ml-2">
-											<input type="text" className="form-control" placeholder="회원사명 입력" style={{width:"250px"}} />
+											<input type="text" className="form-control" placeholder="회원사명 입력" style={{width:"200px"}} />
 										</div>
 										<div className="searchFrm_btn">
 											<MDBBtn color="blue-grey" className="btn_searchFrm_clear">초기화</MDBBtn>
@@ -139,13 +139,13 @@ class con4 extends Component {
 									</form>
 
 									<div className="mt-3 d-flex">
-										<div className="REC_commend">
-											<MDBBtn color="dark" className="btn_REC_commend">정산반려</MDBBtn>
-											<MDBBtn color="dark" className="btn_REC_commend">정산완료</MDBBtn>
+										<div className="Calc_commend">
+											<MDBBtn color="dark" className="btn_Calc_commend">정산반려</MDBBtn>
+											<MDBBtn color="dark" className="btn_Calc_commend">정산완료</MDBBtn>
 										</div>
 									</div>
 
-									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-2 REC_table">
+									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-2 Calc_table">
 										<colgroup>
 											<col width="60"/>
 											<col width="20"/>
@@ -164,8 +164,8 @@ class con4 extends Component {
 												<th>번호</th>
 												<th>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_checkAll" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_checkAll"></label>
+														<input type="checkbox" id="Calc_table_checkAll" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_checkAll"></label>
 													</div>
 												</th>
 												<th>회원사명</th>
@@ -184,8 +184,8 @@ class con4 extends Component {
 												<td>100</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사1</td>
@@ -204,8 +204,8 @@ class con4 extends Component {
 												<td>99</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사1</td>
@@ -224,8 +224,8 @@ class con4 extends Component {
 												<td>98</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" disabled/>
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" disabled/>
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사12</td>
@@ -244,8 +244,8 @@ class con4 extends Component {
 												<td>97</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" disabled/>
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" disabled/>
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사13</td>
@@ -325,17 +325,16 @@ class con4 extends Component {
 								</MDBTabPane>
 
 								{/* 연간정산내역조회 탭 */}
-								<MDBTabPane tabId="2" className="con4_tab2 Company_REC"> {/* Company_REC css분리필요함 */}
+								<MDBTabPane tabId="2"> 
 									<form className="searchFrm form-inline">
 										<MultiYearSelector />
-
 										<div className="searchFrm_btn">
 											<MDBBtn color="blue-grey" className="btn_searchFrm_clear">초기화</MDBBtn>
 											<MDBBtn color="mdb-color" className="btn_searchFrm_submit">조회</MDBBtn>
 										</div>
 									</form>
 
-									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-3 REC_table">
+									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-3 Calc_table">
 										<colgroup>
 											<col width="60"/>
 											<col />
@@ -482,16 +481,16 @@ class con4 extends Component {
 								</MDBTabPane>
 
 								{/* 지급관리 탭 */}
-								<MDBTabPane tabId="3" className="con4_tab3 Company_REC"> {/* Company_REC css분리필요함 */}
+								<MDBTabPane tabId="3">
 								<form className="searchFrm form-inline">
 										<div className="form-group ml-2" >
-											<select className="browser-default custom-select" defaultValue="1">
+											<select className="browser-default custom-select dateLabel" defaultValue="1">
 												<option value="1">요청일자</option>
 												<option value="2">처리일자</option>
 											</select>
 										</div>
 										<div className="form-group">
-											<input type="date" className="form-control" style={{width:"165px"}} />
+											<input type="date" className="form-control intputDate" style={{width:"165px"}} />
 										</div>
 
 										<div className="form-group ml-2">
@@ -502,7 +501,7 @@ class con4 extends Component {
 											</select>
 										</div>
 										<div className="form-group ml-2">
-											<input type="text" className="form-control" placeholder="회원사명 입력" style={{width:"250px"}} />
+											<input type="text" className="form-control" placeholder="회원사명 입력" style={{width:"200px"}} />
 										</div>
 										<div className="searchFrm_btn">
 											<MDBBtn color="blue-grey" className="btn_searchFrm_clear">초기화</MDBBtn>
@@ -511,12 +510,12 @@ class con4 extends Component {
 									</form>
 
 									<div className="mt-3 d-flex">
-										<div className="REC_commend">
-											<MDBBtn color="dark" className="btn_REC_commend">지급완료</MDBBtn>
+										<div className="Calc_commend">
+											<MDBBtn color="dark" className="btn_Calc_commend">지급완료</MDBBtn>
 										</div>
 									</div>
 
-									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-2 REC_table">
+									<MDBTable scrollY maxHeight="600px" striped bordered className="text-center mt-2 Calc_table">
 										<colgroup>
 											<col width="60"/>
 											<col width="20"/>
@@ -535,8 +534,8 @@ class con4 extends Component {
 												<th>번호</th>
 												<th>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_checkAll" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_checkAll"></label>
+														<input type="checkbox" id="Calc_table_checkAll" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_checkAll"></label>
 													</div>
 												</th>
 												<th>회원사명</th>
@@ -555,8 +554,8 @@ class con4 extends Component {
 												<td>100</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사1</td>
@@ -575,8 +574,8 @@ class con4 extends Component {
 												<td>99</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사1</td>
@@ -595,8 +594,8 @@ class con4 extends Component {
 												<td>98</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" />
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" />
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사12</td>
@@ -615,8 +614,8 @@ class con4 extends Component {
 												<td>97</td>
 												<td>
 													<div className="d-flex">
-														<input type="checkbox" id="REC_table_check100" className="form-control REC_table_check" disabled/>
-														<label htmlFor="REC_table_check100"></label>
+														<input type="checkbox" id="Calc_table_check100" className="form-control Calc_table_check" disabled/>
+														<label htmlFor="Calc_table_check100"></label>
 													</div>
 												</td>
 												<td>회원사13</td>
@@ -701,7 +700,7 @@ class con4 extends Component {
 				{/*이행내역팝업*/}
 				<MDBModal isOpen={this.state.REC_info_Modal} toggle={this.REC_info_Modal_toggle} size="fluid">
 					<MDBModalHeader toggle={this.REC_info_Modal_toggle}><span style={{fontWeight:"bold"}}>REC이행내역 상세</span></MDBModalHeader>
-					<MDBModalBody className="pt-1 Company_REC_Info">   {/* 추후 클래스명 분리 요함 */}
+					<MDBModalBody className="pt-1 Company_REC_Info">
 					<MDBTable bordered className="REC_Info_Table1">
 								<colgroup>
 									<col width="150"/>
@@ -712,15 +711,17 @@ class con4 extends Component {
 								<MDBTableBody>
 									<tr>
 										<th>계약번호</th>
-										<td colSpan="3">
-											<span style={{cursor:"pointer"}} onClick={this.REC_contract_Modal_toggle}>123455</span>
+										<td>
+											<span style={{cursor:"pointer"}} onClick={this.REC_contract_Modal_toggle}>123457</span>
 										</td>
+                                        <th>회원사명</th>
+                                        <td>회원사1</td>
 									</tr>
 									<tr>
 										<th>이행검토상태</th>
-										<td>검토완료</td>
+										<td>검토요청</td>
 										<th>정산상태</th>
-										<td>정산대기</td>
+										<td>정산완료</td>
 									</tr>
 								</MDBTableBody>
 							</MDBTable>
@@ -790,9 +791,11 @@ class con4 extends Component {
 							<div className="mt-2 d-flex justify-content-center">
 								<div className="REC_Info_commend">
 									<MDBBtn color="mdb-color" className="btn_REC_Info_commend" onClick={this.REC_info_Modal_toggle}>취소</MDBBtn>
-									<MDBBtn color="mdb-color" className="btn_REC_Info_commend">저장</MDBBtn>
+									<MDBBtn color="mdb-color" className="btn_REC_Info_commend">이행검토완료</MDBBtn>
+									<MDBBtn color="mdb-color" className="btn_REC_Info_commend">이행내역취소</MDBBtn>
 								</div>
 							</div>
+
 							{/* 댓글영역 */}
 							<div className="mt-5 mb-4">
 								{/* 댓글작성란 */}
@@ -801,12 +804,12 @@ class con4 extends Component {
 										<label htmlFor="memoArea" style={{fontWeight:"bold"}}>댓글 메모 작성</label>
 										<textarea className="form-control" id="memoArea" rows="5" placeholder="댓글을 입력해주세요. 최대 3000byte"></textarea>
 										<div className="d-flex justify-content-center">
-											<MDBBtn outline color="indigo" className="btn_REC_memo" onClick={this.REC_info_Modal_toggle}>취소</MDBBtn>
+											<MDBBtn outline color="indigo" className="btn_REC_memo">취소</MDBBtn>
 											<MDBBtn outline color="indigo" className="btn_REC_memo">저장</MDBBtn>
 										</div>
 									</div>
 								</form>
-								
+							
 								{/* 댓글리스트 */}
 								<div style={{fontWeight:"bold"}}>댓글 100개</div>
 									<MDBTable className="memoList_table mb-0">
@@ -892,7 +895,7 @@ class con4 extends Component {
 				{/*계약정보팝업*/}
 				<MDBModal isOpen={this.state.REC_contract_Modal} toggle={this.REC_contract_Modal_toggle} size="md" centered>
 					<MDBModalHeader toggle={this.REC_contract_Modal_toggle}><span style={{fontWeight:"bold"}}>회원사 정보 상세</span></MDBModalHeader>
-					<MDBModalBody className="pt-1 Admin_REC"> {/* css분리 필요 */}
+					<MDBModalBody className="pt-1 Admin_REC">
 						<MDBTable responsive bordered className="REC_member_Table1 text-center mt-2">
 							<MDBTableBody>
 								<tr>
@@ -966,4 +969,4 @@ class con4 extends Component {
 	}
 }
 
-export default con4;
+export default Admin_Calculate;

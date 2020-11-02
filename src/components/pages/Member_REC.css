@@ -1,0 +1,26 @@
+/*컨텐츠영역 구성*/
+.Member_REC.div_content{padding-left:10px;margin-top: 70px;}
+.Member_REC .titleCardBody{padding:0;min-height:43px;}
+.Member_REC #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*검색라인*/
+.Member_REC .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Member_REC .searchFrm .form-control,.Member_REC .searchFrm .custom-select{border: 1px solid black}
+.Member_REC .searchFrm_btn{margin-left: auto;}
+.Member_REC .btn_searchFrm_clear,.Member_REC .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+
+/*테이블 옵션라인*/
+.Member_REC .REC_summary{margin-left:auto;margin-top: 10px;margin-right: 20px;font-weight: bold;}
+.Member_REC .REC_summary em{color:#1976d2;}
+.Member_REC .btn_REC_commend{border-radius: 0.25rem;padding: 0 13px 0 13px;margin: 0 5px 0 0;height: 31px;font-size: 15px;font-weight: bold;}
+
+/*테이블*/
+.Member_REC .REC_table th{font-weight: bold;}
+.Member_REC .REC_table_check{width:18px;height:18px;}
+
+/*계약정보 모달*/
+.Member_REC .REC_contract_Table th{font-weight: 600;}
+.Member_REC .contractLoad{color:darkgray;background-color: #DCDCDC;height:700px;font-size: 26px;}
+
+/*테이블 늘어났을때 수직align*/
+.Member_REC .REC_table thead th{vertical-align: middle;}

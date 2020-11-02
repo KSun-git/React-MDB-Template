@@ -1,6 +1,6 @@
 .Con4.div_content{
 	/*border:1px dotted blue;*/
-	min-height:100vh;
+	/*min-height:100vh;*/
 	padding-left:10px;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .con4CardBody{
-	height:100vh;
+	/*height:100vh;*/
 }
 
 .con4_pills_title > a {

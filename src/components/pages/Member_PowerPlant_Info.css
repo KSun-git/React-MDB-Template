@@ -1,0 +1,28 @@
+/*컨텐츠영역 구성*/
+.Member_PowerPlant_Info.div_content{padding-left:10px;margin-top: 70px;}
+.Member_PowerPlant_Info .titleCardBody{padding:0;min-height:43px;}
+.Member_PowerPlant_Info #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*Pills*/
+.Member_PowerPlant_Info .PowerPlant_pills_title > a {padding: 5px 20px 5px 20px;border: 1px solid #3E4551;border-radius:0.1rem !important;background-color: #9e9e9e !important;color: black !important;}
+.Member_PowerPlant_Info .PowerPlant_pills_title > .active {font-weight: bold;background-color: white !important;}
+
+/*테이블*/
+.Member_PowerPlant_Info .PowerPlant_table{border: 1px solid darkgray !important;}
+.Member_PowerPlant_Info .PowerPlant_table thead th{border: 1px solid darkgray !important; font-weight: bold;}
+.Member_PowerPlant_Info .PowerPlant_table tbody th{border: 1px solid darkgray !important;background-color:#eeeeee;font-weight: bold;}
+.Member_PowerPlant_Info .PowerPlant_table td{border: 1px solid darkgray !important;}
+
+/*버튼*/
+.Member_PowerPlant_Info .btn_Info_commend{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 8px 0 0;height: 38px;min-width: 100px;font-size: 15px;font-weight: bold;color:#fff}
+.Member_PowerPlant_Info .btn_memo{border-radius: 0.5rem;padding: 5px 10px 5px 10px;width: 62px;color:#212529 !important;font-size: 13px;font-weight:650;}
+
+/*댓글 목록 테이블*/
+.Member_PowerPlant_Info .memoList_table{border: 1px solid #78909c;}
+.Member_PowerPlant_Info .memoList_table th{border: 1px solid #78909c !important;}
+.Member_PowerPlant_Info .memoList_table .memo_memberUser th{font-weight: 600;background-color: #9e9e9e;}
+.Member_PowerPlant_Info .memoList_table .memo_memberUser th span{padding-left: 10px;font-weight:normal;}
+.Member_PowerPlant_Info .memoList_table .memo_companyUser th{font-weight: 600;background-color:#7986cb;}
+.Member_PowerPlant_Info .memoList_table .memo_companyUser th span{padding-left: 10px;font-weight:normal;}
+
+

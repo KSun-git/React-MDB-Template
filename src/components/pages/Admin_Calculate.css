@@ -1,0 +1,24 @@
+/*컨텐츠영역 구성*/
+.Admin_Calculate.div_content{padding-left:10px;margin-top: 70px;}
+.Admin_Calculate .titleCardBody{padding:0;min-height:43px;}
+.Admin_Calculate #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*Pills*/
+.Admin_Calculate .Calculate_pills_title > a {padding: 5px 20px 5px 20px;border: 1px solid #3E4551;border-radius:0.1rem !important;background-color: #9e9e9e !important;color: black !important;}
+.Admin_Calculate .Calculate_pills_title > .active {font-weight: bold;background-color: white !important;}
+
+/*검색라인*/
+.Admin_Calculate .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Admin_Calculate .searchFrm .form-control,.Admin_Calculate .searchFrm .custom-select{border: 1px solid black}
+.Admin_Calculate .searchFrm_btn{margin-left: auto;}
+.Admin_Calculate .btn_searchFrm_clear,.Admin_Calculate .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+.Admin_Calculate .searchFrm .custom-select.dateLabel{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right: 0;width: 110px;background-color: #ffffff;}
+.Admin_Calculate .searchFrm .form-control.intputDate{border-top-left-radius: 0;border-bottom-left-radius: 0;width:165px;}
+
+/*버튼*/
+.Admin_Calculate .btn_Calc_commend{border-radius: 0.25rem;padding: 0 13px 0 13px;margin: 0 5px 0 0;height: 31px;font-size: 15px;font-weight: bold;}
+
+/*테이블*/
+.Admin_Calculate .Calc_table th{font-weight: bold;}
+.Admin_Calculate .Calc_table_check{width:18px;height:18px;}
+

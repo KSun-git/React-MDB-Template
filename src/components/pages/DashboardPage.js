@@ -1,28 +1,16 @@
 import React from 'react';
 import { MDBRow } from 'mdbreact';
-import AdminCardSection1 from './sections/AdminCardSection1';
-import AdminCardSection2 from './sections/AdminCardSection2';
-import TableSection from './sections/TableSection';
-import BreadcrumSection from './sections/BreadcrumSection';
-import ChartSection1 from './sections/ChartSection1';
-import ChartSection2 from './sections/ChartSection2';
-import MapSection from './sections/MapSection';
-import ModalSection from './sections/ModalSection';
 
 const DashboardPage =  () => {
   return (
-    <React.Fragment>
-      <BreadcrumSection />
-      <AdminCardSection1 />
-      <ChartSection1 />
-      <TableSection />
-      <ChartSection2 />
-      <MDBRow className="mb-4">
-          <MapSection />
-          <ModalSection />
-      </MDBRow>
-      <AdminCardSection2 />
-    </React.Fragment>
+    
+      <div style={{marginTop:"70px",marginLeft:"10px"}} className="border">
+        <div className="d-flex flex-wrap align-content-center justify-content-center" 
+              style={{color:"darkgray",backgroundColor:"#DCDCDC",fontSize:"30px",height:"900px"}}> {/**color:darkgray;background-color: #DCDCDC;height:700px;font-size: 26px; */}
+					<div> &#8251; 대시보드 영역 &#8251;</div>
+				</div>
+      </div>
+    
   )
 }
 

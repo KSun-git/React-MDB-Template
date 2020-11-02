@@ -1,0 +1,23 @@
+/*컨텐츠영역 구성*/
+.Company_REC.div_content{min-height:100vh;padding-left:10px;}
+.Company_REC .titleCardBody{padding:0;min-height:43px;}
+.Company_REC #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*검색라인*/
+.Company_REC .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Company_REC .searchFrm .form-control,.Company_REC .searchFrm .custom-select{border: 1px solid black}
+.Company_REC .searchFrm_btn{margin-left: auto;}
+.Company_REC .btn_searchFrm_clear,.Company_REC .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+.Company_REC .searchFrm .form-control.dateLabel{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right: 0;width: 90px;background-color: #ffffff;}
+.Company_REC .searchFrm .form-control.intputDate{border-top-left-radius: 0;border-bottom-left-radius: 0;width:165px;}
+
+/*테이블 옵션라인*/
+.Company_REC .btn_REC_commend{border-radius: 0.25rem;padding: 0 13px 0 13px;margin: 0 5px 0 0;height: 31px;font-size: 15px;font-weight: bold;}
+
+/*테이블*/
+.Company_REC .REC_table th{font-weight: bold;}
+.Company_REC .REC_table_check{width:18px;height:18px;}
+
+/*계약정보 모달*/
+.Company_REC .REC_contract_Table th{font-weight: 600;}
+.Company_REC .contractLoad{color:darkgray;background-color: #DCDCDC;height:700px;font-size: 26px;}

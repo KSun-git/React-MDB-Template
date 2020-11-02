@@ -28,7 +28,7 @@ class ChartSection1 extends Component {
 
         const barChartOptions = {
             responsive: true,
-            maintainAspectRatio: false,
+            maintainAspectRatio: false,                      /* [check] true  */
             scales: {
             xAxes: [{
                 barPercentage: 1,
@@ -64,7 +64,7 @@ class ChartSection1 extends Component {
                 <MDBCol md="8"className="mb-4">
                     <MDBCard className="mb-4">
                         <MDBCardBody>
-                            <Bar data={dataBar} height={500} options={barChartOptions} />
+                            <Bar data={dataBar} height={500} options={barChartOptions} />    {/* [check] height  */}
                         </MDBCardBody>
                     </MDBCard>
                 </MDBCol>

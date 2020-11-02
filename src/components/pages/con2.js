@@ -9,7 +9,7 @@ class con2 extends Component {
 		<div className="Con2 div_content">
 			<MDBCard>
 				<MDBCardBody className="titleCardBody">
-					<span id="content_title">회원사정보 관리</span>
+					<span id="content_title">회원사정보 관리 </span><span style={{color:"red"}}>(권한&gt;관리자)</span>
 					<span id="title_option">
 						<MDBBtn color="elegant" className="btn_con2">회원사정보 개별등록</MDBBtn>
 						<MDBBtn color="elegant" className="btn_con2">회원사정보 일괄등록</MDBBtn>

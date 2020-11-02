@@ -21,7 +21,7 @@ a{
 
 #mainContent{
 	margin-left: 80px;
-	min-height: 800px;
+	min-height: 100vh;
 	
 }
 
@@ -33,10 +33,12 @@ a{
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 	background-color: #0d47a1;
 	padding-top: 0;
-	z-index: 89;
+  z-index: 89;
+  overflow: auto;
 }
 
 .topNavbar-fixed{
+  position: fixed;
 	background:white;
 	z-index:99;
 	width: 100%;
@@ -185,6 +187,13 @@ main {
   }
 }
 
+/*
+.go2646822163{
+  //multi-select 테두리
+  border: 1px solid black !important;
+}*/
 
-
-
+.dropdown-heading{
+  /*multi-select 테두리*/
+  border: 1px solid black !important;
+}
