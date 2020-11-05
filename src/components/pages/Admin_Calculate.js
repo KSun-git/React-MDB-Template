@@ -70,7 +70,6 @@ class Admin_Calculate extends Component {
 	};
 	
 	render() {
-		const {repleOn} = this.state;
 
 		return (
 			<div className="Admin_Calculate div_content">

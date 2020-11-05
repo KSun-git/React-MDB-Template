@@ -1,0 +1,34 @@
+/*컨텐츠영역 구성*/
+.Company_MemberInfo.div_content{margin-top: 70px;padding-left:10px;}
+.Company_MemberInfo .titleCardBody{padding:0;min-height:43px;}
+.Company_MemberInfo #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*검색라인*/
+.Company_MemberInfo .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Company_MemberInfo .searchFrm .form-control,.Company_MemberInfo .searchFrm .custom-select{border: 1px solid black}
+.Company_MemberInfo .searchFrm_btn{margin-left: auto;}
+.Company_MemberInfo .btn_searchFrm_clear,.Company_MemberInfo .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+.Company_MemberInfo .searchFrm .form-control.dateLabel{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right: 0;width: 90px;background-color: #ffffff;}
+.Company_MemberInfo .searchFrm .form-control.intputDate{border-top-left-radius: 0;border-bottom-left-radius: 0;width:165px;}
+
+/*테이블*/
+.Company_MemberInfo .memberINfo_table th{font-weight: bold;}
+
+/*회원사정보 상세모달*/
+.Company_MemberInfo .memberInfo_Table1 th, .Company_MemberInfo .memberInfo_Table1 td{
+    padding-top:5px !important;
+    padding-bottom: 5px !important;
+}
+.Company_MemberInfo .memberInfo_Table1 th{
+    background-color:#9e9e9e;
+    font-weight: bold;
+}
+
+.Company_MemberInfo .memberInfo_Table2 th, .Company_MemberInfo .memberInfo_Table2 td{
+    padding-top:5px !important;
+    padding-bottom: 5px !important;
+}
+
+.Company_MemberInfo .memberInfo_Table2 th{
+    font-weight: bold;
+}

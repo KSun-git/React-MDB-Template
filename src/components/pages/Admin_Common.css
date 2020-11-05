@@ -1,0 +1,14 @@
+/*컨텐츠영역 구성*/
+.Admin_Common.div_content{padding-left:10px;margin-top: 70px;}
+.Admin_Common .titleCardBody{padding:0;min-height:43px;}
+.Admin_Common #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*테이블*/
+.Admin_Common .Common_table{border: 1px solid darkgray !important;}
+.Admin_Common .Common_table thead th{border: 1px solid darkgray !important; font-weight: bold;}
+.Admin_Common .Common_table tbody th{border: 1px solid darkgray !important;background-color:#eeeeee;font-weight: bold;}
+.Admin_Common .Common_table td{border: 1px solid darkgray !important;}
+.Admin_Common .Common_table_check{width:15px;height:15px;}
+
+/*테이블 옵션라인*/
+.Admin_Common .btn_common_commend{border-radius: 0.25rem;padding: 0 18px 0 18px;margin: 0 5px 0 0;height: 31px;font-size: 15px;font-weight: bold;}

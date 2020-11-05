@@ -12,6 +12,9 @@ class Company_Faq extends Component {
 	state = {
         enroll_faq_Modal: false,
         update_faq_Modal: false,
+        faq_100_appear: true,
+        faq_99_appear: false,
+        faq_98_appear: true,
     }
     
     enroll_Modal_toggle = () => {
@@ -26,8 +29,17 @@ class Company_Faq extends Component {
         });
     }
 
+    toggleAppearOption = (toggleId) => {
+        let toggleAppear = toggleId + '_appear'
+        this.setState({
+            [toggleAppear]: !this.state[toggleAppear]
+        })
+    }
+    
+
 	constructor(props){
-		super(props);
+        super(props);
+        //this.toggleAppearOption = this.toggleAppearOption.bind(this);
 	}
 
 	componentDidMount(){
@@ -36,6 +48,9 @@ class Company_Faq extends Component {
 
 	render() {
         const {enroll_faq_Modal, update_faq_Modal} = this.state;
+        const {faq_100_appear, faq_99_appear, faq_98_appear} = this.state;
+        const element_onBoard = <span className="Faq_on">노출 <MDBIcon icon="caret-down" /></span>;
+        const element_offBoard = <span className="Faq_off">미노출 <MDBIcon icon="caret-up" /></span>;
 
 		return (
 			<div className="Company_Faq div_content">
@@ -43,7 +58,7 @@ class Company_Faq extends Component {
                 {/**타이틀 */}
                 <MDBCard>
 					<MDBCardBody className="titleCardBody">
-						<span id="content_title">FAQ</span><span style={{color:"red"}}> (권한&gt;회원사)</span>
+						<span id="content_title">FAQ</span>
                         <span id="title_option">
 						    <MDBBtn color="elegant" className="btn_faq_enroll" onClick={this.enroll_Modal_toggle}>FAQ 등록</MDBBtn>
                         </span>
@@ -69,13 +84,13 @@ class Company_Faq extends Component {
                                             <tr>
                                                 <th>노출여부</th>
                                                 <td>
-                                                    <div class="custom-control custom-radio d-inline">
-                                                        <input type="radio" name="isDisplay" id="onBoard" class="custom-control-input" value="onBoard"/>
-                                                        <label class="custom-control-label" htmlFor="onBoard">노출</label>
+                                                    <div className="custom-control custom-radio d-inline">
+                                                        <input type="radio" name="isDisplay" id="onBoard" className="custom-control-input" value="onBoard"/>
+                                                        <label className="custom-control-label" htmlFor="onBoard">노출</label>
                                                     </div>
-                                                    <div class="custom-control custom-radio d-inline ml-2">
-                                                        <input type="radio" name="isDisplay" id="offBoard" class="custom-control-input" value="offBoard"/>
-                                                        <label class="custom-control-label" htmlFor="offBoard">미노출</label>
+                                                    <div className="custom-control custom-radio d-inline ml-2">
+                                                        <input type="radio" name="isDisplay" id="offBoard" className="custom-control-input" value="offBoard"/>
+                                                        <label className="custom-control-label" htmlFor="offBoard">미노출</label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -92,7 +107,7 @@ class Company_Faq extends Component {
 				</MDBCard>
 				
                 {/**내용 */}
-				<MDBCard className="mt-2 pb-3">
+				<MDBCard className="mt-2">
 					<MDBCardBody className="contentCardBody">
 
 						{/**검색라인 */}
@@ -103,7 +118,7 @@ class Company_Faq extends Component {
                             <div className="form-group">
                                 <input type="date" className="form-control intputDate" />
                             </div>
-                            <sapn className="ml-2 mr-2"> ~ </sapn>
+                            <span className="ml-2 mr-2"> ~ </span>
                             <div className="form-group">
                                 <input type="date" className="form-control" />
                             </div>
@@ -155,8 +170,8 @@ class Company_Faq extends Component {
                                         <img src={nbox} alt="new" style={{width:"18px",marginTop:"-18px"}}/>
                                     </td>
                                     <td>
-                                        <div className="appear_option" id="faq_100" >
-                                            <span className="Faq_on">노출 <MDBIcon icon="caret-down" /></span>
+                                        <div className="appear_option" id="faq_100" onClick={this.toggleAppearOption.bind(this, "faq_100")}>
+                                            {faq_100_appear ? element_onBoard : element_offBoard}
                                         </div>
                                     </td>
                                     <td>2020-10-10 11:11:11</td>
@@ -167,8 +182,8 @@ class Company_Faq extends Component {
                                         <span className="faqTitle" onClick={this.update_Modal_toggle}>FAQ Question 2</span>
                                     </td>
                                     <td>
-                                        <div className="appear_option" id="faq_99">
-                                            <span className="Faq_off">미노출 <MDBIcon icon="caret-up" /></span>
+                                        <div className="appear_option" id="faq_99" onClick={this.toggleAppearOption.bind(this, "faq_99")}>
+                                        {faq_99_appear ? element_onBoard : element_offBoard}
                                         </div>
                                     </td>
                                     <td>2020-10-10 11:11:11</td>
@@ -179,8 +194,8 @@ class Company_Faq extends Component {
                                         <span className="faqTitle" onClick={this.update_Modal_toggle}>FAQ Question 3</span>
                                     </td>
                                     <td>
-                                        <div className="appear_option" id="faq_98">
-                                            <span className="Faq_on">노출 <MDBIcon icon="caret-down" /></span>
+                                        <div className="appear_option" id="faq_98" onClick={this.toggleAppearOption.bind(this, "faq_98")}>
+                                        {faq_98_appear ? element_onBoard : element_offBoard}
                                         </div>
                                     </td>
                                     <td>2020-10-10 11:11:11</td>

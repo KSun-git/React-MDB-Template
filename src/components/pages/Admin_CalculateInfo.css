@@ -1,0 +1,23 @@
+/*컨텐츠영역 구성*/
+.Admin_CalculateInfo.div_content{padding-left:10px;margin-top: 70px;}
+.Admin_CalculateInfo .titleCardBody{padding:0;min-height:43px;}
+.Admin_CalculateInfo #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+.Admin_CalculateInfo #title_option{float:right;}
+.Admin_CalculateInfo .btn_CalcInfo_enroll{padding:5px 15px 5px 15px;border-radius:0.5rem;}
+
+/*Pills*/
+.Admin_CalculateInfo .Calculate_pills_title > a {padding: 5px 20px 5px 20px;border: 1px solid #3E4551;border-radius:0.1rem !important;background-color: #9e9e9e !important;color: black !important;}
+.Admin_CalculateInfo .Calculate_pills_title > .active {font-weight: bold;background-color: white !important;}
+
+/*검색라인*/
+.Admin_CalculateInfo .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Admin_CalculateInfo .searchFrm .form-control,.Admin_CalculateInfo .searchFrm .custom-select{border: 1px solid black}
+.Admin_CalculateInfo .searchFrm_btn{margin-left: auto;}
+.Admin_CalculateInfo .btn_searchFrm_clear,.Admin_CalculateInfo .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+
+/*테이블*/
+.Admin_CalculateInfo .CalcInfo_table th{font-weight: bold;}
+.Admin_CalculateInfo .CalcInfo_table .Info_Price{width: 80%}
+.Admin_CalculateInfo .CalcInfo_table .Info_Memo{width: 100%}
+
+

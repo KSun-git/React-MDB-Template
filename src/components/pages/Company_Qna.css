@@ -1,0 +1,22 @@
+/*컨텐츠영역 구성*/
+.Company_Qna.div_content{margin-top: 70px;padding-left:10px;}
+.Company_Qna .titleCardBody{padding:0;min-height:43px;}
+.Company_Qna #content_title{padding-left:10px;line-height:43px;font-weight:bold;font-size:20px;}
+
+/*검색라인*/
+.Company_Qna .searchFrm{border-radius: 0.25rem;border: 2px solid #bdbdbd;padding: 5px 0 5px 0;}
+.Company_Qna .searchFrm .form-control,.Company_Qna .searchFrm .custom-select{border: 1px solid black}
+.Company_Qna .searchFrm_btn{margin-left: auto;}
+.Company_Qna .btn_searchFrm_clear,.Company_Qna .btn_searchFrm_submit{border-radius: 0.25rem;padding: 5px 10px 5px 10px;margin: 0 5px 0 0;height: 38px;font-size: 15px;font-weight: bold;}
+.Company_Qna .searchFrm .form-control.dateLabel{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right: 0;width: 90px;background-color: #ffffff;}
+.Company_Qna .searchFrm .form-control.intputDate{border-top-left-radius: 0;border-bottom-left-radius: 0;width:165px;}
+
+/*QnA 목록*/
+.Company_Qna .qna_table th{font-weight: bold;}
+.Company_Qna .qna_table .qnaTitle{cursor: pointer;}
+.Company_Qna .qna_table .appear_option{cursor: pointer;}
+
+/*Qna 모달*/
+.Company_Qna .enroll_qna_table th{background-color:#9e9e9e;font-weight: bold;text-align: center;vertical-align: middle;width: 200px;}
+
+

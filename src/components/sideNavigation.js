@@ -28,7 +28,7 @@ const TopNavigation = (props) => {
                     </MDBListGroupItem>
                 </NavLink>
                 
-                {//회원사 사이드 네비게이션
+                {// 1.회원사 사이드 네비게이션
                     props.nowRole==="Member" && 
                     <>
                         <NavLink to={`/${props.nowRole}/Contract`}>
@@ -78,7 +78,7 @@ const TopNavigation = (props) => {
                     </>
                 }
 
-                {//거래소 사이드 네비게이션
+                {// 2.거래소 사이드 네비게이션
                     props.nowRole==="Company" && 
                     <>
                         <NavLink to={`/${props.nowRole}/MemberInfo`}>
@@ -112,8 +112,8 @@ const TopNavigation = (props) => {
                             <span className="sideNav_menu_text">
                                 분석통계
                                 <ul id="sideNav_config_innerLink" className="pl-4">
-                                    <NavLink to={`/${props.nowRole}/Analysis`}><li>정산가격분석</li></NavLink>
-                                    <NavLink to={`/${props.nowRole}/Analysis`}><li>현물가격분석</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/Analysis/1`}><li>정산가격분석</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/Analysis/2`}><li>현물가격분석</li></NavLink>
                                 </ul>
                             </span>
                         </MDBListGroupItem>
@@ -133,7 +133,7 @@ const TopNavigation = (props) => {
                     </>
                 }
 
-                {//관리자 사이드 네비게이션
+                {// 3.관리자 사이드 네비게이션
                     props.nowRole==="Admin" && 
                     <>
                         <NavLink to={`/${props.nowRole}/Contract`}>
@@ -181,8 +181,8 @@ const TopNavigation = (props) => {
                             <span className="sideNav_menu_text">
                                 정산정보관리
                                 <ul id="sideNav_config_innerLink" className="pl-4">
-                                    <NavLink to={`/${props.nowRole}/CalcInfo`}><li>중간정산단가 관리</li></NavLink>
-                                    <NavLink to={`/${props.nowRole}/CalcInfo`}><li>연간정산정보 관리</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/CalcInfo/1`}><li>중간정산단가 관리</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/CalcInfo/2`}><li>연간정산정보 관리</li></NavLink>
                                 </ul>
                             </span>
                         </MDBListGroupItem>
@@ -192,8 +192,8 @@ const TopNavigation = (props) => {
                             <span className="sideNav_menu_text">
                                 분석통계
                                 <ul id="sideNav_config_innerLink" className="pl-4">
-                                    <NavLink to={`/${props.nowRole}/Analysis`}><li>정산가격분석</li></NavLink>
-                                    <NavLink to={`/${props.nowRole}/Analysis`}><li>현물가격분석</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/Analysis/1`}><li>정산가격분석</li></NavLink>
+                                    <NavLink to={`/${props.nowRole}/Analysis/2`}><li>현물가격분석</li></NavLink>
                                 </ul>
                             </span>
                         </MDBListGroupItem>
